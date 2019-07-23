@@ -1,0 +1,48 @@
+<div *ngIf="contact" class="container">
+    <div class="d-flex">
+        <div class="p-2 mr-auto">
+            <a routerLink="/contacts"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="p2">
+            <button (click)="edit()" class="btn">Edit <i class="fas fa-edit"></i></button>
+        </div>
+        <div class="p2">
+            <button (click)="delete(contact.id)" type="button" class="btn">Delete <i class="fas fa-trash"></i></button>
+        </div>
+    </div>
+    <div class="card shadow" [@flyInOut]="'in'">
+        <div class="card-header">
+            <div *ngIf="isEdited == false">
+                <i class="fas fa-user-circle"></i>
+                <span class="name">
+                    {{contact.name}}
+                </span>
+            </div>
+            <div *ngIf="isEdited != false">
+                <span class="name">
+                    <i class="fas fa-user-circle"></i>
+                    <input type="text" class="form-control" [(ngModel)]="contact.name" placeholder="name">
+                </span>
+            </div>
+        </div>
+        <div class="card-body">
+            <div *ngIf="isEdited == false">
+                <span><i class="fas fa-phone"></i> {{contact.number}}</span>
+                <hr>
+                <span><i class="fas fa-envelope"></i> {{contact.email}}</span>
+                <hr>
+                <span><i class="fas fa-tags"></i> {{contact.tags}}</span>
+            </div>
+            <div *ngIf="isEdited != false" class="edit">
+                <input type="text" class="form-control" [(ngModel)]="contact.number" placeholder="number">
+                <hr>
+                <input type="text" class="form-control" [(ngModel)]="contact.email" placeholder="email">
+                <hr>
+                <textarea name="tags" cols="60" rows="10" class="form-control" [(ngModel)]="contact.tags">{{ contact.tags }}</textarea>
+                <hr>
+                <button (click)="update()" class="btn save-btn">Save</button>
+                <button (click)="cancle()" class="btn cancle-btn">Cancle</button>
+            </div>
+        </div>
+    </div>
+</div>

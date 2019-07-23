@@ -1,0 +1,24 @@
+i {
+    color: #0ba818;
+}
+
+.fa-arrow-left {
+    font-size: 22px;
+}
+
+form {
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.btn {
+    background: #0ba818;
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    form {
+        width: 100%;
+    }
+}

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="content">
+        <div class="d-flex">
+            <div class="p2 mr-auto">
+                <h4 class="title">My Contacts</h4>
+            </div>
+            <div class="p2">
+                <a routerLink="/new">
+                    <span>Add Contact</span>
+                    <i class="fas fa-plus-circle"></i>
+                </a>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            <li *ngFor="let contact of contacts" class="list-group-item">
+                <a routerLink="/{{contact.id}}">
+                    {{contact.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

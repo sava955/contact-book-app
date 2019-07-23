@@ -1,0 +1,49 @@
+<div class="container">
+    <form [@flyInOut]="'in'">
+        <a routerLink="/contacts"><i class="fas fa-arrow-left"></i></a>
+        <h3>Create Contact</h3>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" 
+                   name="name" 
+                   class="form-control" 
+                   [(ngModel)]="newContact.name" 
+                   placeholder="Enter the name"
+                   #name="ngModel"
+                    required>
+            <div [hidden]="name.valid || name.pristine">
+                Name is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" 
+                   name="email" 
+                   class="form-control" 
+                   [(ngModel)]="newContact.email" 
+                   placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="number">Number:</label>
+            <input type="text" 
+                   name="number" 
+                   class="form-control"
+                   [(ngModel)]="newContact.number" 
+                   placeholder="Enter a number"
+                   #number="ngModel" 
+                   required>
+            <div [hidden]="number.valid || number.pristine">
+                Number is required
+            </div>      
+        </div>
+        <div class="form-group">
+            <label for="number">Tags:</label>
+            <textarea name="tags" 
+                      class="form-control" 
+                      cols="30" 
+                      rows="5" 
+                      [(ngModel)]="newContact.tags"></textarea>
+        </div>
+        <button (click)="addContact()" class="btn">Create contact</button>
+    </form>
+</div>

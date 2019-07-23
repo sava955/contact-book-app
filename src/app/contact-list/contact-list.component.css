@@ -1,0 +1,56 @@
+.content {
+    width: 80%;
+    margin: auto;
+}
+
+.d-flex {
+    margin-top: 20px;
+}
+
+.title {
+    padding-bottom: 5px;
+    border-bottom: 5px solid #0ba818;
+}
+
+a {
+    color: #212529;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0ba818;
+}
+
+.d-flex a span {
+    font-size: 18px;
+}
+
+.d-flex i {
+    color: #0ba818;
+    font-size: 22px;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.list-group {
+    margin-top: 20px;
+}
+
+.list-group-item a {
+    padding-right: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        width: 100%;
+    }
+
+    .d-flex a span {
+        display: none;
+    }
+    
+    .d-flex i {
+        margin-top: 5px;
+        font-size: 28px; 
+    }
+}
